@@ -280,13 +280,32 @@ def prepare_label(df: pd.DataFrame, source_col: str, target_col: str = "label", 
     return out
 
 
+def nice_label(col: str) -> str:
+    mapping = {
+        "total_views": "Total Views",
+        "total_clicks": "Total Clicks",
+        "total_purchase_rows": "Total Purchases",
+        "total_revenue": "Total Revenue",
+        "ctr_percent": "CTR (%)",
+        "click_to_purchase_rate_percent": "Purchase Rate (%)",
+        "purchase_rate_percent": "Purchase Rate (%)",
+        "price": "Price",
+        "rating_avg_clean": "Average Rating",
+        "category": "Category",
+        "brand": "Brand",
+        "label": "Product",
+        "product_name": "Product",
+    }
+    return mapping.get(col, col.replace("_", " ").title())
+
+
 def chart_layout(fig: go.Figure, height: int = 390, legend: bool = True) -> go.Figure:
     fig.update_layout(
         template="plotly_white",
         height=height,
         paper_bgcolor="rgba(0,0,0,0)",
         plot_bgcolor="rgba(0,0,0,0)",
-        margin=dict(l=12, r=18, t=54, b=18),
+        margin=dict(l=12, r=18, t=54, b=40),
         font=dict(family="Inter, sans-serif", size=13, color="#0f172a"),
         title_font=dict(family="Inter, sans-serif", size=20, color="#0f172a"),
         hoverlabel=dict(bgcolor="#0E46A3", font_color="#ffffff", bordercolor="#0E46A3"),
@@ -332,6 +351,7 @@ def barh(df: pd.DataFrame, x: str, y: str, title: str, color: str, text_prefix: 
         orientation="h",
         title=title,
         text=x,
+        labels={x: nice_label(x), y: nice_label(y)},
     )
     fig.update_traces(marker_color=color, textposition="outside", cliponaxis=False)
     if text_prefix or text_suffix:
@@ -343,12 +363,12 @@ def barh(df: pd.DataFrame, x: str, y: str, title: str, color: str, text_prefix: 
             fig.update_traces(texttemplate=f"{text_prefix}%{{text:,.0f}}{text_suffix}")
     else:
         fig.update_traces(texttemplate="%{text:,.0f}")
-    fig.update_layout(yaxis=dict(autorange="reversed"), showlegend=False)
+    fig.update_layout(yaxis=dict(autorange="reversed"), showlegend=False, xaxis_title=nice_label(x), yaxis_title=nice_label(y))
     return chart_layout(fig, height=height, legend=False)
 
 
 def barv(df: pd.DataFrame, x: str, y: str, title: str, color: str, text_prefix: str = "", text_suffix: str = "", height: int = 390) -> go.Figure:
-    fig = px.bar(df, x=x, y=y, title=title, text=y)
+    fig = px.bar(df, x=x, y=y, title=title, text=y, labels={x: nice_label(x), y: nice_label(y)})
     fig.update_traces(marker_color=color, textposition="outside", cliponaxis=False)
     if text_suffix == "%":
         fig.update_traces(texttemplate=f"{text_prefix}%{{text:.2f}}{text_suffix}")
@@ -356,13 +376,13 @@ def barv(df: pd.DataFrame, x: str, y: str, title: str, color: str, text_prefix: 
         fig.update_traces(texttemplate=f"{text_prefix}%{{text:,.0f}}{text_suffix}")
     else:
         fig.update_traces(texttemplate=f"{text_prefix}%{{text:,.0f}}{text_suffix}")
-    fig.update_layout(xaxis_tickangle=-25, showlegend=False)
+    fig.update_layout(xaxis_tickangle=-22, showlegend=False, xaxis_title=nice_label(x), yaxis_title=nice_label(y))
     return chart_layout(fig, height=height, legend=False)
 
 
 def combo_bar_line(df: pd.DataFrame, sort_col: str, rate_col: str, label_col: str, title: str, bar_name: str, line_name: str, color_bar: str, color_line: str) -> go.Figure:
-    plot_df = df.dropna(subset=[sort_col, rate_col]).sort_values(sort_col, ascending=False).head(12).copy()
-    plot_df["label"] = plot_df[label_col].astype(str).apply(lambda x: short_text(x, 24))
+    plot_df = df.dropna(subset=[sort_col, rate_col]).sort_values(sort_col, ascending=False).head(10).copy()
+    plot_df["label"] = plot_df[label_col].astype(str).apply(lambda x: short_text(x, 20))
     fig = make_subplots(specs=[[{"secondary_y": True}]])
     fig.add_trace(
         go.Bar(x=plot_df["label"], y=plot_df[sort_col], name=bar_name, marker_color=color_bar, opacity=0.82),
@@ -383,7 +403,7 @@ def combo_bar_line(df: pd.DataFrame, sort_col: str, rate_col: str, label_col: st
     )
     fig.update_yaxes(title_text=bar_name, secondary_y=False)
     fig.update_yaxes(title_text=line_name, secondary_y=True)
-    fig.update_layout(title=title, xaxis_title="Product", xaxis_tickangle=-35)
+    fig.update_layout(title=title, xaxis_title="Product", xaxis_tickangle=-32, margin=dict(b=95))
     return chart_layout(fig, height=430, legend=True)
 
 
@@ -500,7 +520,6 @@ page = st.sidebar.radio(
         "4. Category & Brand Performance",
     ],
 )
-st.sidebar.caption("Visualisasi menggunakan full data hasil SQL + EDA agar ranking Top 10 tidak terpotong oleh filter.")
 
 # ============================================================
 # HEADER
@@ -566,7 +585,7 @@ if page == "1. Executive Overview":
             fig.add_trace(go.Scatter(x=m["month"], y=m["total_purchase_rows"], mode="lines+markers", name="Purchases", line=dict(color="#79C779", width=3)), secondary_y=False)
             fig.add_trace(go.Scatter(x=m["month"], y=m["total_revenue"], mode="lines+markers", name="Revenue", line=dict(color="#FF7777", width=3, dash="dot")), secondary_y=True)
             fig.update_yaxes(title_text="Events", secondary_y=False)
-            fig.update_yaxes(title_text="Revenue", secondary_y=True)
+            fig.update_yaxes(title_text="Total Revenue", secondary_y=True)
             fig.update_layout(title="Monthly Product Engagement and Revenue")
             fig = chart_layout(fig, height=410, legend=True)
             show_chart(fig)
@@ -623,12 +642,12 @@ elif page == "2. Product Performance":
         st.markdown('</div>', unsafe_allow_html=True)
     with r2c2:
         st.markdown('<div class="chart-panel">', unsafe_allow_html=True)
-        panel("Views and CTR by Product", "Top 12 produk berdasarkan views, dengan CTR sebagai garis")
+        panel("Views and CTR by Product", "Top 10 produk berdasarkan views, dengan CTR sebagai garis")
         show_chart(combo_bar_line(product_full, "total_views", "ctr_percent", "product_name", "Top Products by Views with CTR Overlay", "Views", "CTR (%)", "#B8D9FF", "#0E46A3"))
         st.markdown('</div>', unsafe_allow_html=True)
 
     st.markdown('<div class="chart-panel">', unsafe_allow_html=True)
-    panel("Clicks and Purchase Rate by Product", "Top 12 produk berdasarkan clicks, dengan purchase rate sebagai garis")
+    panel("Clicks and Purchase Rate by Product", "Top 10 produk berdasarkan clicks, dengan purchase rate sebagai garis")
     show_chart(combo_bar_line(product_full, "total_clicks", "click_to_purchase_rate_percent", "product_name", "Top Products by Clicks with Purchase Rate Overlay", "Clicks", "Purchase Rate (%)", "#CDEFD2", "#2E8B57"))
     st.markdown('</div>', unsafe_allow_html=True)
 
