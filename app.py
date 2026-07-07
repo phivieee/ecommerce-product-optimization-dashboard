@@ -51,16 +51,21 @@ st.markdown(
     }
 
     section[data-testid="stSidebar"] [data-baseweb="select"] > div {
-        background: #0F172A !important;
-        color: #FFFFFF !important;
+        background: #FFFFFF !important;
+        color: #111827 !important;
         border-radius: 14px;
         border: 1px solid rgba(15, 23, 42, 0.14);
+        box-shadow: 0 6px 14px rgba(15, 23, 42, 0.05);
     }
 
+    section[data-testid="stSidebar"] [data-baseweb="select"] *,
     section[data-testid="stSidebar"] [data-baseweb="select"] span,
+    section[data-testid="stSidebar"] [data-baseweb="select"] div,
+    section[data-testid="stSidebar"] [data-baseweb="select"] input,
     section[data-testid="stSidebar"] [data-baseweb="select"] svg {
-        color: #FFFFFF !important;
-        fill: #FFFFFF !important;
+        color: #111827 !important;
+        fill: #111827 !important;
+        opacity: 1 !important;
     }
 
     .main .block-container {
@@ -345,7 +350,7 @@ def plotly_layout(fig: go.Figure, height: int = 380) -> go.Figure:
         template="plotly_white",
         height=height,
         paper_bgcolor="rgba(0,0,0,0)",
-        plot_bgcolor="#FFFFFF",
+        plot_bgcolor="rgba(0,0,0,0)",
         margin=dict(l=20, r=20, t=60, b=20),
         font=dict(family="Inter, sans-serif", color="#111827", size=13),
         title_font=dict(family="Inter, sans-serif", size=20, color="#111827"),
@@ -356,7 +361,7 @@ def plotly_layout(fig: go.Figure, height: int = 380) -> go.Figure:
             xanchor="left",
             x=0,
             font=dict(color="#374151", size=12),
-            bgcolor="rgba(255,255,255,0.92)",
+            bgcolor="rgba(255,255,255,0.75)",
             bordercolor="rgba(15,23,42,0.08)",
             borderwidth=1,
         ),
@@ -377,6 +382,45 @@ def plotly_layout(fig: go.Figure, height: int = 380) -> go.Figure:
         zeroline=False,
     )
     return fig
+
+
+def combo_bar_line(df: pd.DataFrame, sort_col: str, rate_col: str, label_col: str, title: str,
+                   bar_name: str, line_name: str, top_n: int = 15,
+                   bar_color: str = "#9EC5FE", line_color: str = "#0E46A3") -> go.Figure:
+    plot_df = df.dropna(subset=[sort_col, rate_col]).copy()
+    plot_df = plot_df.sort_values(sort_col, ascending=False).head(top_n).copy()
+    plot_df["label"] = shorten_labels(plot_df, label_col, n=22)
+
+    fig = make_subplots(specs=[[{"secondary_y": True}]])
+    fig.add_trace(
+        go.Bar(
+            x=plot_df["label"],
+            y=plot_df[sort_col],
+            name=bar_name,
+            marker_color=bar_color,
+            opacity=0.88,
+            hovertemplate=f"{bar_name}: %{{y:,.0f}}<extra></extra>",
+        ),
+        secondary_y=False,
+    )
+    fig.add_trace(
+        go.Scatter(
+            x=plot_df["label"],
+            y=plot_df[rate_col],
+            name=line_name,
+            mode="lines+markers+text",
+            text=[f"{v:.1f}%" for v in plot_df[rate_col]],
+            textposition="top center",
+            line=dict(color=line_color, width=3),
+            marker=dict(size=8, color=line_color),
+            hovertemplate=f"{line_name}: %{{y:.2f}}%<extra></extra>",
+        ),
+        secondary_y=True,
+    )
+    fig.update_yaxes(title_text=bar_name, secondary_y=False)
+    fig.update_yaxes(title_text=line_name, secondary_y=True)
+    fig.update_layout(title=title, xaxis_title="Product", xaxis_tickangle=-35)
+    return plotly_layout(fig, 430)
 
 
 def performance_quadrant(df: pd.DataFrame, x_col: str, y_col: str, size_col: str, label_col: str,
@@ -769,31 +813,35 @@ elif page == "2. Product Performance":
 
     with row2_col2:
         st.markdown('<div class="white-panel">', unsafe_allow_html=True)
-        panel_header("Performance Matrix: Views vs CTR", "Scatter penuh terlalu padat, jadi ditampilkan bubble matrix untuk 40 produk dengan views tertinggi")
-        fig = performance_quadrant(
+        panel_header("Views and CTR by Product", "Top products by views dengan CTR sebagai garis")
+        fig = combo_bar_line(
             df,
-            x_col="total_views",
-            y_col="ctr_percent",
-            size_col="total_revenue",
+            sort_col="total_views",
+            rate_col="ctr_percent",
             label_col="product_name",
-            top_n=40,
-            title="Views vs CTR — Top 40 by Views",
-            subtitle_mode="views",
+            title="Top Products by Views with CTR Overlay",
+            bar_name="Views",
+            line_name="CTR (%)",
+            top_n=15,
+            bar_color="#B8D9FF",
+            line_color="#0E46A3",
         )
         st.plotly_chart(fig, use_container_width=True)
         st.markdown('</div>', unsafe_allow_html=True)
 
     st.markdown('<div class="white-panel">', unsafe_allow_html=True)
-    panel_header("Performance Matrix: Clicks vs Purchase Rate", "Visual diganti menjadi bubble matrix untuk 40 produk dengan clicks tertinggi agar lebih terbaca")
-    fig = performance_quadrant(
+    panel_header("Clicks and Purchase Rate by Product", "Top products by clicks dengan purchase rate sebagai garis")
+    fig = combo_bar_line(
         df,
-        x_col="total_clicks",
-        y_col="click_to_purchase_rate_percent",
-        size_col="total_revenue",
+        sort_col="total_clicks",
+        rate_col="click_to_purchase_rate_percent",
         label_col="product_name",
-        top_n=40,
-        title="Clicks vs Purchase Rate — Top 40 by Clicks",
-        subtitle_mode="clicks",
+        title="Top Products by Clicks with Purchase Rate Overlay",
+        bar_name="Clicks",
+        line_name="Purchase Rate (%)",
+        top_n=15,
+        bar_color="#CDEFD2",
+        line_color="#2E8B57",
     )
     st.plotly_chart(fig, use_container_width=True)
     st.markdown('</div>', unsafe_allow_html=True)
@@ -830,23 +878,16 @@ elif page == "3. Product Optimization Opportunity":
     tab1, tab2 = st.tabs(["High View, Low CTR", "High Click, Low Purchase"])
 
     with tab1:
-        left, right = st.columns([1.1, 1])
-        with left:
-            st.markdown('<div class="white-panel">', unsafe_allow_html=True)
-            panel_header("High View, Low CTR", "Produk sering dilihat tetapi kurang mendorong klik")
-            plot_df = hv.head(12).copy()
-            plot_df["product_label"] = shorten_labels(plot_df, "product_name")
-            fig = px.bar(plot_df, x="total_views", y="product_label", orientation="h", color="ctr_percent", color_continuous_scale="Reds", title="High Exposure Products with Lower CTR", text="total_views")
-            fig.update_traces(texttemplate="%{text:,.0f}", textposition="outside")
-            fig.update_layout(yaxis=dict(autorange="reversed"), coloraxis_showscale=False)
-            fig = plotly_layout(fig, 430)
-            st.plotly_chart(fig, use_container_width=True)
-            st.markdown('</div>', unsafe_allow_html=True)
-        with right:
-            insight_box(
-                "Analisis",
-                "Produk dalam kelompok ini memiliki visibilitas tinggi, tetapi CTR lebih rendah dibanding median. Fokus optimasi: thumbnail, judul produk, harga yang ditampilkan, rating/review, dan posisi rekomendasi produk. Prioritaskan produk dengan <b>total views paling tinggi</b> karena dampak perbaikannya lebih besar.",
-            )
+        st.markdown('<div class="white-panel">', unsafe_allow_html=True)
+        panel_header("High View, Low CTR", "Produk sering dilihat tetapi kurang mendorong klik")
+        plot_df = hv.head(12).copy()
+        plot_df["product_label"] = shorten_labels(plot_df, "product_name")
+        fig = px.bar(plot_df, x="total_views", y="product_label", orientation="h", color="ctr_percent", color_continuous_scale="Reds", title="High Exposure Products with Lower CTR", text="total_views")
+        fig.update_traces(texttemplate="%{text:,.0f}", textposition="outside")
+        fig.update_layout(yaxis=dict(autorange="reversed"), coloraxis_showscale=False)
+        fig = plotly_layout(fig, 430)
+        st.plotly_chart(fig, use_container_width=True)
+        st.markdown('</div>', unsafe_allow_html=True)
         pretty_table(
             hv,
             columns=["product_name", "category", "brand", "price", "rating_avg_clean", "total_views", "total_clicks", "ctr_percent", "total_revenue"],
@@ -865,26 +906,19 @@ elif page == "3. Product Optimization Opportunity":
         )
 
     with tab2:
-        left, right = st.columns([1.1, 1])
-        with left:
-            st.markdown('<div class="white-panel">', unsafe_allow_html=True)
-            panel_header("High Click, Low Purchase", "Produk diklik cukup tinggi tetapi pembelian rendah")
-            if not hc.empty:
-                plot_df = hc.head(12).copy()
-                plot_df["product_label"] = shorten_labels(plot_df, "product_name")
-                fig = px.bar(plot_df, x="total_clicks", y="product_label", orientation="h", color="click_to_purchase_rate_percent", color_continuous_scale="OrRd_r", title="High Click Products with Low Purchase Rate", text="total_clicks")
-                fig.update_traces(texttemplate="%{text:,.0f}", textposition="outside")
-                fig.update_layout(yaxis=dict(autorange="reversed"), coloraxis_showscale=False)
-                fig = plotly_layout(fig, 430)
-                st.plotly_chart(fig, use_container_width=True)
-            else:
-                st.info("Tidak ada produk yang memenuhi kriteria high click dan purchase rate <= 5% pada filter ini.")
-            st.markdown('</div>', unsafe_allow_html=True)
-        with right:
-            insight_box(
-                "Analisis",
-                "Produk dalam kelompok ini sudah berhasil menarik minat awal pengguna melalui klik, tetapi belum cukup kuat menghasilkan transaksi. Fokus optimasi: halaman produk, trust signal, kejelasan spesifikasi, review, harga, promo, ongkir, dan friction pada checkout.",
-            )
+        st.markdown('<div class="white-panel">', unsafe_allow_html=True)
+        panel_header("High Click, Low Purchase", "Produk diklik cukup tinggi tetapi pembelian rendah")
+        if not hc.empty:
+            plot_df = hc.head(12).copy()
+            plot_df["product_label"] = shorten_labels(plot_df, "product_name")
+            fig = px.bar(plot_df, x="total_clicks", y="product_label", orientation="h", color="click_to_purchase_rate_percent", color_continuous_scale="OrRd_r", title="High Click Products with Low Purchase Rate", text="total_clicks")
+            fig.update_traces(texttemplate="%{text:,.0f}", textposition="outside")
+            fig.update_layout(yaxis=dict(autorange="reversed"), coloraxis_showscale=False)
+            fig = plotly_layout(fig, 430)
+            st.plotly_chart(fig, use_container_width=True)
+        else:
+            st.info("Tidak ada produk yang memenuhi kriteria high click dan purchase rate <= 5% pada filter ini.")
+        st.markdown('</div>', unsafe_allow_html=True)
         if not hc.empty:
             pretty_table(
                 hc,
@@ -913,8 +947,6 @@ elif page == "4. Category & Brand Performance":
         st.stop()
 
     cat = category_full.copy()
-    if selected_category != "All":
-        cat = cat[cat["category"] == selected_category]
 
     brand = brand_full.copy()
     if selected_category != "All":
@@ -979,7 +1011,7 @@ elif page == "4. Category & Brand Performance":
         st.markdown('</div>', unsafe_allow_html=True)
 
     st.markdown('<div class="white-panel">', unsafe_allow_html=True)
-    panel_header("Top Brands by CTR", "Brand dengan CTR tertinggi, minimum 100 views agar lebih stabil")
+    panel_header("Top Brands by CTR", "")
     plot_df = brand[brand["total_views"] >= 100].sort_values("ctr_percent", ascending=False).head(12).copy()
     plot_df["brand_category"] = plot_df["brand"].astype(str) + " | " + plot_df["category"].astype(str)
     fig = px.bar(plot_df, x="ctr_percent", y="brand_category", orientation="h", color="ctr_percent", color_continuous_scale="Blues", title="Top Brands by CTR", text="ctr_percent")
@@ -989,7 +1021,3 @@ elif page == "4. Category & Brand Performance":
     st.plotly_chart(fig, use_container_width=True)
     st.markdown('</div>', unsafe_allow_html=True)
 
-    insight_box(
-        "Summary Category & Brand Insight",
-        "Gunakan halaman ini untuk menentukan prioritas kategori dan brand. Kategori dengan revenue tinggi layak diprioritaskan untuk inventory dan campaign, sedangkan kategori atau brand dengan CTR tinggi menunjukkan daya tarik awal yang kuat dan bisa diuji untuk promosi lanjutan. Purchase rate membantu membedakan produk yang hanya menarik diklik dari produk yang benar-benar menghasilkan transaksi.",
-    )
