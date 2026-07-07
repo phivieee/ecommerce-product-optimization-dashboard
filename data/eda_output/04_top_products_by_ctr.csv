@@ -1,0 +1,11 @@
+product_id,product_name,category,brand,price,rating_avg_clean,total_views,total_clicks,ctr_percent
+f18f9d8a-7dec-484e-a5b3-5519d04d719e,Columbia Pro Team Sport,Sports & Outdoors,Columbia,22.25,,46,32,69.57
+9f37c7b4-34bb-46db-ab34-4b6ad2884c5f,Head Max1 Fitness Equipment,Sports & Outdoors,Head,72.87,,39,26,66.67
+974eff69-6e03-4e77-9d0b-8a21e70f5833,Wilson Performance Cycling,Sports & Outdoors,Wilson,46.53,3.5,66,41,62.12
+4adc622b-3ed0-49b5-bf25-14d639a2d82c,Logitech Studio Galaxy16,Electronics,Logitech,40.76,4.0,100,58,58.0
+3e4996b9-0f0c-4a5d-94fa-60be51781e8a,Calvin Klein Essential Menswear,Clothing & Accessories,Calvin Klein,38.92,5.0,51,29,56.86
+a88df0bb-fc35-4bd0-841c-0326c69a8251,Sony Galaxy Prime12,Electronics,Sony,97.23,4.0,37,21,56.76
+e265f398-335b-433e-a347-07eaeb53d87a,"Coca-Cola Snack - 14""",Grocery & Gourmet,Coca-Cola,4.27,2.0,32,18,56.25
+6ef410a7-f23b-4267-8fd8-3d3e857760ec,Cuisinart Ultra-Soft Bedding,Home & Kitchen,Cuisinart,34.76,,38,21,55.26
+9fc09c6f-3d90-4b33-a950-cc9b977df8ed,Castrol Universal Car Accessorie,Automotive,Castrol,55.11,,58,32,55.17
+285c6282-8ebb-430d-83b5-f811b66cc69d,Nestle Tangy Snack,Grocery & Gourmet,Nestle,7.48,5.0,49,27,55.1

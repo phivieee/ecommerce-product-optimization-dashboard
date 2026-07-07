@@ -1,0 +1,120 @@
+product_id,product_name,category,brand,price,rating_avg_clean,total_views,total_clicks,ctr_percent,total_revenue
+c1ab2206-9b50-4aaa-9446-f322d0976ea6,The Data Structures: A Comprehensive Guide,Books,Simon & Schuster,19.97,3.9,1954,734,37.56,1669.2
+25a6c99c-d63c-4697-91ef-744b7879d605,Post-it Premium Stationery Set,Office Products,Post-it,45.91,4.1,1330,477,35.86,1926.2
+2e1a3d22-2a05-4b6e-bfd8-4b5d5dab3009,Michelin Heavy-Duty Car Accessorie,Automotive,Michelin,40.15,4.7,1309,488,37.28,1325.89
+5d07bcd4-3670-4a0d-91f6-e36d7d335597,Adidas Sterling Silver Jewelry,Clothing & Accessories,Adidas,27.22,3.9,989,366,37.01,1524.11
+f81e1fd5-a01b-4fbe-81d6-5dc5ab19b03c,Castrol Prime7 Electronic,Automotive,Castrol,120.75,4.8,692,259,37.43,2791.99
+8b875a73-88df-44ff-966d-5649d7a14d31,Nike Womenswear in Olive,Clothing & Accessories,Nike,64.5,4.2,680,247,36.32,2170.9
+3b27636c-a2bd-4c64-b03c-ac8bf64ce0bc,Pyrex Smart Appliance,Home & Kitchen,Pyrex,23.87,4.3,597,219,36.68,502.94
+43a517c2-190a-4bc1-b77b-4d88936ee641,Instant Pot Professional Kitchenware,Home & Kitchen,Instant Pot,28.2,4.6,450,161,35.78,565.41
+920b6f6f-d113-4b7a-861b-b6bda3de9fdc,Professional Entrepreneurship: The Advanced Concepts Explained,Books,Penguin Books,19.46,4.8,396,145,36.62,489.07
+5de0a820-43c1-4d74-b371-3bb4e115ce33,Dyson Modern Home Decor,Home & Kitchen,Dyson,35.02,3.4,255,89,34.9,346.04
+0c70a612-d55e-4879-9bce-299d323437f3,Bosch Tools & Equipment Set,Automotive,Bosch,78.06,3.8,225,77,34.22,1398.94
+4ebe94fb-6705-4f36-96df-cb464c559568,L'Oreal Bloom Cologne,Beauty & Personal Care,L'Oreal,42.49,4.6,223,70,31.39,685.13
+d70d14b8-4566-4d3d-b9b3-eee857b374c0,Samsung X9 Fitness Tracker,Electronics,Samsung,258.43,4.8,203,62,30.54,1803.13
+c6e6f549-6d3f-41a8-aad5-d0e89af54109,Post-it Compact Office Furniture,Office Products,Post-it,67.62,4.0,199,70,35.18,543.19
+35bf8754-29bb-463a-a710-839011ee78ab,Pyrex Premium Kitchenware,Home & Kitchen,Pyrex,54.98,4.3,196,76,38.78,829.02
+15aab0b8-557b-4fed-b273-06eee86de77d,L'Oreal Haircare Shampoo,Beauty & Personal Care,L'Oreal,46.86,4.0,186,59,31.72,620.06
+fac9f7cb-7484-4330-bd8a-42565f5794cb,L'Oreal Liquid Makeup,Beauty & Personal Care,L'Oreal,16.32,4.8,185,66,35.68,164.17
+5ad1dceb-cb0e-4de9-89e6-f7c4c6abda23,Staples Premium Stationery Set,Office Products,Staples,33.3,2.5,176,59,33.52,395.85
+920a8047-d219-4f21-bf1e-9904f1097bad,Bosch Prime6 Electronic,Automotive,Bosch,10.56,4.2,176,68,38.64,158.97
+09103a95-db77-427f-82f9-14d9d18d0a88,Staples Ergonomic Office Furniture,Office Products,Staples,76.31,4.2,155,57,36.77,1221.71
+18ac2bb9-bb4b-4d23-9114-b3bf76134b6b,Nestle Organic Pantry Staple,Grocery & Gourmet,Nestle,9.91,4.0,153,41,26.8,97.43
+e0eedfb6-a73e-4576-a467-254f95fa2e5e,Le Creuset Classic Appliance,Home & Kitchen,Le Creuset,117.52,1.0,153,50,32.68,121.9
+d477e2b1-796a-4d3e-9c83-a22d09ade40a,Adidas Menswear in Cobalt,Clothing & Accessories,Adidas,49.26,4.0,140,50,35.71,686.34
+d9963a88-d54f-4a18-b655-414ea714832a,Wilson Camping Gear Kit,Sports & Outdoors,Wilson,62.65,4.3,139,40,28.78,495.22
+be60ab9a-20b4-493b-8eb1-96560541155e,Bose Galaxy Pro11,Electronics,Bose,53.56,4.0,134,37,27.61,213.65
+6dc7a3f9-d94d-4f3a-bc57-883c89de9309,Nike Classic Fit Menswear,Clothing & Accessories,Nike,23.51,4.0,128,49,38.28,351.54
+d774c7a8-e8a7-4379-a26e-2f1299b393fc,Nerf Luna Action Figure,Toys & Games,Nerf,25.49,2.0,127,44,34.65,103.57
+a060bcab-a7c8-45ea-823c-acda21f21c7b,Cuisinart Modern Lighting,Home & Kitchen,Cuisinart,21.67,5.0,122,47,38.52,63.55
+02287feb-fd4c-46db-bba2-c8fbd0059fe9,Apple Ultra Prime3,Electronics,Apple,530.27,3.3,121,35,28.93,2146.77
+b73b38a1-df92-44b3-bfd8-e3189d42f74f,Apple X1 Activity Band,Electronics,Apple,34.92,3.0,109,35,32.11,173.9
+b1a8533d-7d06-48ae-b1d2-02a39ad1c623,"Instant Pot 32"" Kitchenware Set",Home & Kitchen,Instant Pot,50.68,2.5,108,39,36.11,151.2
+c2a06d28-ff18-4026-b93f-2f76b2672382,"L'Oreal Skincare - 17""",Beauty & Personal Care,L'Oreal,34.07,5.0,107,33,30.84,136.13
+2c625841-a848-47a7-bae9-4be42c6f6846,Goodyear Fluid SAE 5W-30,Automotive,Goodyear,205.45,5.0,106,27,25.47,391.78
+5dfa0ac8-a67b-4d42-9877-036cead74d27,Staples Printer Pro,Office Products,Staples,41.18,3.7,103,28,27.18,166.76
+eb5e1d1d-8dff-4a1f-b019-87b266f12881,NOCO Car Care Kit,Automotive,NOCO,176.55,4.0,103,37,35.92,1079.21
+a0c63932-3335-49e7-b637-8d3b0c7680f8,L'Oreal Skincare Cream,Beauty & Personal Care,L'Oreal,33.78,3.5,101,33,32.67,199.62
+cf301c21-300a-451e-ae20-31f93b065422,Apple Accessorie Charger,Electronics,Apple,225.99,2.0,100,35,35.0,222.11
+e38d1f5f-2a70-46be-acaa-92edc3c81788,Adidas Menswear in Green,Clothing & Accessories,Adidas,68.42,4.0,96,32,33.33,542.03
+6411e0b8-d915-4f88-83c3-b81148416eea,Cuisinart Furniture Set,Home & Kitchen,Cuisinart,33.06,3.8,94,26,27.66,165.32
+83193959-a250-4c8f-a4ac-62280593a762,Timberland Adjustable Fitness Equipment,Sports & Outdoors,Timberland,88.66,5.0,92,25,27.17,90.65
+a3189deb-09d2-47fd-8e45-40f52e03548e,Therm-a-Rest All-Weather Outdoor Recreation,Sports & Outdoors,Therm-a-Rest,25.15,2.0,92,34,36.96,52.12
+279e9971-91eb-4601-99cc-a3f3a1bfbe83,Apple Classic Smartwatch,Electronics,Apple,77.92,3.5,86,24,27.91,154.44
+8b90ec3c-b810-484a-8a6e-3631149ecacb,Goodyear Car Accessorie - Navy,Automotive,Goodyear,53.23,4.0,85,25,29.41,54.34
+bd62a52c-fda1-4881-9d1a-6193ced2fca2,Fellowes Premium Stationery Set,Office Products,Fellowes,24.55,5.0,80,21,26.25,25.6
+72d5ae0b-e20d-40bc-beff-667dfb84af75,Samsung Core Smartwatch,Electronics,Samsung,21.55,5.0,75,23,30.67,86.21
+3ea4fffe-c11a-4d38-9dfd-a55452ede270,Spalding Cycling Pro,Sports & Outdoors,Spalding,53.18,4.0,74,27,36.49,212.4
+2ea7a39e-736e-4b9c-a85f-6c2f3ddab48d,Dell Pixel14 Ultrabook,Electronics,Dell,161.15,3.7,73,22,30.14,500.56
+1af2ed68-8b17-4484-b5e9-2aab1d96497b,Schwinn Waterproof Camping Gear,Sports & Outdoors,Schwinn,42.17,5.0,70,24,34.29,415.48
+7b32ddb0-3ecc-4e67-a448-e9e9311f6379,Nestle Snack Variety Pack,Grocery & Gourmet,Nestle,18.22,3.5,69,15,21.74,89.93
+42f9572a-31c3-4d9f-9fb1-ae2e8598ef45,Bosch Car Accessorie - Beige,Automotive,Bosch,66.98,5.0,68,25,36.76,68.69
+59815d2b-d0be-46cd-bf9c-1e68398bfb97,Zara Accessorie Set,Clothing & Accessories,Zara,45.01,4.7,65,21,32.31,178.69
+74073ef0-27ce-4323-a134-ae96c9cd6dca,KitchenAid Ultra-Soft Bedding,Home & Kitchen,KitchenAid,42.83,,62,16,25.81,0.0
+1e9375d3-32a3-4855-9af4-f0d384694c2b,Apple X12 Activity Band,Electronics,Apple,13.8,,62,24,38.71,14.11
+037cec35-3b10-4dec-bc5d-f1872c162070,Adidas Classic Accessorie,Clothing & Accessories,Adidas,34.73,1.0,58,16,27.59,33.92
+a3c44c20-02fd-4102-8825-548cd500b92d,Nike Pro9 Running Shoes,Clothing & Accessories,Nike,31.51,4.5,57,18,31.58,162.32
+a23bf6eb-55dc-486b-934c-2af91e7e1b11,Apple Z19 Smartphone,Electronics,Apple,208.83,4.0,56,13,23.21,1059.09
+fd2f2ff0-2363-4f9d-a8db-227bf021d16a,Theragun Fitness Equipment Pro,Sports & Outdoors,Theragun,121.08,,56,20,35.71,122.42
+11be4dba-b87b-40c3-bad6-8ceb3e4d9bcc,Zara Casual Menswear,Clothing & Accessories,Zara,27.7,,53,8,15.09,84.88
+8d0e558c-e441-49cc-8b6c-eb1cb7b2c999,Superior vanguard Adventure,Books,Penguin Books,18.81,5.0,53,15,28.3,36.2
+1776d6e9-cd02-4b90-b7bb-50156ed4ca06,"Samsung Essential 17"" Display Tablet",Electronics,Samsung,31.93,,52,16,30.77,30.73
+e9a8765c-6cb1-41f2-b5dc-e9b69e29c85d,Apple Accessorie Cable,Electronics,Apple,48.3,5.0,50,16,32.0,94.4
+775a6dea-7ab2-4918-87c1-6d53d8724d27,Columbia Portable Outdoor Recreation,Sports & Outdoors,Columbia,77.43,5.0,49,17,34.69,157.07
+29c51c4a-3690-4fad-9a99-c2404b42e985,Sony Max5 Fitness Tracker,Electronics,Sony,45.3,,49,18,36.73,0.0
+17f2285d-1707-4b77-b944-6f7f3db9360b,KitchenAid Ultra-Soft Bedding,Home & Kitchen,KitchenAid,21.98,,49,19,38.78,22.19
+94d8cca1-d1a9-4166-b0ed-7d41536afd08,Clinique Aura Perfume Spray,Beauty & Personal Care,Clinique,24.11,4.5,48,15,31.25,49.38
+5a8ba49f-924c-43ff-b90f-b578956a0f9d,Apple Edge8 Ultra,Electronics,Apple,168.81,,48,16,33.33,172.47
+1285f796-396a-46b3-8285-0a8ca4f3dfa5,Nike Ultra Casual Sneakers,Clothing & Accessories,Nike,25.77,4.0,46,10,21.74,78.51
+8a4aa0a6-d37e-40e7-bb35-dc8391877fb8,Olay Makeup Palette,Beauty & Personal Care,Olay,15.23,4.0,46,16,34.78,30.37
+66482965-2b91-444a-a0ea-fb5318318687,Spalding Portable Outdoor Recreation,Sports & Outdoors,Spalding,78.12,4.0,45,15,33.33,158.58
+25450c50-662a-4ac3-8265-374d6a1e70e0,The elite phoenix,Books,Penguin Books,24.3,4.0,45,17,37.78,145.63
+c20e1516-a80c-46ef-8857-158e9e7a1a70,Nike Casual Menswear,Clothing & Accessories,Nike,59.73,4.0,44,8,18.18,61.47
+ecb6628b-2a3e-4205-ada1-0b8a4b6d6a66,Michelin Smart Electronic,Automotive,Michelin,66.98,5.0,44,16,36.36,201.08
+5e7640a2-6ae2-404a-b17e-2d4e60bbff41,OTC Tools Galaxy4 Tools & Equipment,Automotive,OTC Tools,22.57,4.0,43,13,30.23,68.11
+49bd9c87-bf33-4642-b7f0-a03ac9bb8e52,Apple X2 In-Ear Monitors,Electronics,Apple,259.89,5.0,42,9,21.43,270.7
+79ffa574-bec1-401d-ad0f-508ad6f46905,Versatile fusion Adventure,Books,HarperCollins,32.34,,42,10,23.81,0.0
+daa08f70-8807-486e-b9fe-f8cc961016a2,L'Oreal Skincare Cream,Beauty & Personal Care,L'Oreal,31.95,4.0,42,11,26.19,0.0
+1f6ae9d8-56b8-4eda-91e5-ff53f5b97c52,Dyson Premium Cotton Bedding,Home & Kitchen,Dyson,67.0,,40,6,15.0,0.0
+86f492bc-9d9a-4dbf-aa1e-4761c49c3043,Nestle Organic Pantry Staple,Grocery & Gourmet,Nestle,2.03,,40,7,17.5,6.19
+bfc89c5b-179c-4b25-b6a8-3a3140311dd3,H&M Womenswear Dress,Clothing & Accessories,H&M,41.95,3.5,40,12,30.0,83.71
+cf3c6032-d25f-42cb-8dbf-951141d60bd9,Bosch Car Care Cleaner,Automotive,Bosch,30.72,5.0,40,12,30.0,0.0
+6c02f0ce-2183-4d32-a907-bb033c961fe9,Apple Galaxy5 Pro 5G,Electronics,Apple,54.89,5.0,40,14,35.0,0.0
+b9474555-c8fb-4a3e-8005-d04b3ef24729,Samsung Pro19 Pro Tablet,Electronics,Samsung,275.42,5.0,40,14,35.0,543.76
+a96865f2-cc32-4cdc-9def-1ba8ddbfd160,The Superior Apex Remastered,Toys & Games,LEGO,83.89,5.0,39,15,38.46,335.98
+4f9e7267-cd6f-42ec-916d-7bb0957a5f19,Apple Essential Sport Watch,Electronics,Apple,23.9,,38,11,28.95,0.0
+062073be-fb18-4b54-9cb8-323fb1af2dee,Google Essential Over-Ear Headphones,Electronics,Google,62.91,4.5,38,13,34.21,0.0
+90b35eca-7917-449e-9622-e922a4aa430a,LEGO Elysium Family Game,Toys & Games,LEGO,66.27,5.0,36,8,22.22,127.79
+e8748b29-4c82-432c-a088-3f0b612eb7d2,Yeti Portable Outdoor Recreation,Sports & Outdoors,Yeti,41.28,,36,9,25.0,0.0
+9f3a318b-d5cc-4da4-8fd9-663f9671439c,The Versatile Cascade,Books,Penguin Books,28.75,,36,13,36.11,59.18
+f829c8e9-9729-48aa-baf8-122cb2eb1d21,Samsung Air Over-Ear Headphones,Electronics,Samsung,176.98,5.0,36,13,36.11,338.88
+714a692d-b204-4b27-a002-d658f510d3df,LEGO Cascade Card Game,Toys & Games,LEGO,42.08,2.0,35,7,20.0,126.36
+c05f8ee5-8339-4fc5-bb57-c4fe617e01db,Samsung Studio 5th Gen,Electronics,Samsung,251.91,5.0,35,7,20.0,239.71
+116ec354-36df-497b-bc6c-068817c7c4c4,Twinnings Pantry Staple Unscented,Grocery & Gourmet,Twinnings,5.64,,35,12,34.29,22.74
+07c063a3-3e62-4e4b-9a3d-79c63ae26e68,Ninja Non-Stick Kitchenware,Home & Kitchen,Ninja,33.87,5.0,34,8,23.53,0.0
+1063bdf9-5119-4f27-bcdb-051b1a60eaf0,Apple Core Tab,Electronics,Apple,107.95,,34,9,26.47,0.0
+bf7c5518-5208-4f78-9552-7dd43c26e179,Maybelline Bath & Body Butter,Beauty & Personal Care,Maybelline,19.63,,33,7,21.21,18.82
+7df7c8ec-ff7a-4b2b-a5d3-24cd6ac487fa,Wilson Camping Gear Kit,Sports & Outdoors,Wilson,21.82,3.0,32,4,12.5,66.96
+37845217-759a-40e1-957d-406a266e4489,Tommy Hilfiger Air5 Training Shoes,Clothing & Accessories,Tommy Hilfiger,22.11,5.0,32,10,31.25,69.25
+a94414bb-dd50-4b50-b7d1-08119d1921be,OnePlus Prime19 DSLR,Electronics,OnePlus,207.18,3.5,32,11,34.38,608.5
+5d5464bd-48cf-484b-8775-10d9ae690a5f,L'Oreal Midnight Cologne,Beauty & Personal Care,L'Oreal,21.05,,31,7,22.58,0.0
+e9057e4c-5b85-426f-a6d9-28f830530cfe,L'Oreal Haircare Serum,Beauty & Personal Care,L'Oreal,11.95,3.0,31,9,29.03,0.0
+22784f96-50da-45a7-8a60-dc9d2069f350,Ralph Lauren Premium Womenswear,Clothing & Accessories,Ralph Lauren,85.15,,30,9,30.0,0.0
+f2387fa4-954d-4c92-8a3c-e7f2a02c906a,L'Oreal Bath & Body - Vanilla,Beauty & Personal Care,L'Oreal,40.14,,30,11,36.67,120.21
+cc5aef7d-c5e6-4868-8cf4-8b73606a7391,Merrell Outdoor Recreation Set,Sports & Outdoors,Merrell,100.34,,29,8,27.59,0.0
+73a2d656-ffa8-458d-9fc2-d7489c59329f,Instant Pot Modern Furniture,Home & Kitchen,Instant Pot,105.47,,29,10,34.48,0.0
+9909eb41-e124-44a6-8a4a-537194cbcaf0,Turtle Wax Premium Car Accessorie,Automotive,Turtle Wax,35.26,,29,11,37.93,34.73
+b603e662-1c53-4f3c-afed-7a8f43a94953,Fisher-Price Bloom Building Set,Toys & Games,Fisher-Price,31.54,,28,7,25.0,32.58
+d79fb878-dfb7-45b4-9d71-f14697dbddc7,Le Creuset Max Appliance,Home & Kitchen,Le Creuset,74.96,,28,7,25.0,0.0
+f45a3601-c866-4fd5-b1c4-dbef16bcdf27,Samsung Edge8 Ultra,Electronics,Samsung,199.2,,28,8,28.57,199.67
+862ad620-8c67-4aeb-b869-a8d95e16ee80,L'Oreal Haircare Shampoo,Beauty & Personal Care,L'Oreal,13.14,,27,6,22.22,0.0
+03b6874a-6369-4741-a305-9c3f0b1036eb,The legacy's legacy,Books,Penguin Books,9.61,1.0,27,7,25.93,28.82
+966734c9-d17f-4a1d-8836-a2b809197416,"Bosch Car Care - 14""",Automotive,Bosch,16.8,2.5,27,9,33.33,17.12
+2af47ff5-b419-4687-a803-5da416791c9a,Samsung Air12 In-Ear Monitors,Electronics,Samsung,330.06,5.0,26,2,7.69,314.09
+5e5580f7-bf6e-482a-b953-d666826d6ba0,Apple Ultra 10th Gen,Electronics,Apple,56.53,5.0,26,6,23.08,57.55
+57cbc49d-1a4e-4cc7-a5eb-31bd76037222,Wilson Pro2 Fitness Equipment,Sports & Outdoors,Wilson,17.74,2.0,26,7,26.92,18.06
+4bf16321-aa0b-4ebb-a940-f905a908765e,Sony Ultra Air18 Laptop,Electronics,Sony,47.29,5.0,26,8,30.77,47.41
+711d028c-29fb-402d-97a9-9476df124bdb,Zwilling Furniture - Gray,Home & Kitchen,Zwilling,53.17,,26,10,38.46,108.04
+70f73cb8-9557-4aa3-96a2-759cf86b030d,"Dell Studio 15.6"" Display Tablet",Electronics,Dell,171.31,5.0,25,5,20.0,348.94
+9bbf3ec0-bb7a-45a8-8500-1b2c03596f4d,Microsoft Accessorie Stand,Electronics,Microsoft,55.41,,25,7,28.0,0.0
+6add0373-574c-4f34-a3f8-25faf48f544d,KitchenAid Furniture - Cream,Home & Kitchen,KitchenAid,89.31,2.0,25,9,36.0,182.6

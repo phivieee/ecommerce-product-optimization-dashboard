@@ -1,0 +1,25 @@
+product_id,product_name,category,brand,price,rating_avg_clean,total_views,total_clicks,total_purchase_rows,click_to_purchase_rate_percent,total_revenue
+e5cd5b01-94fc-42ef-b787-9ef2623fb03d,KitchenAid Furniture Set,Home & Kitchen,KitchenAid,33.67,5.0,182.0,86.0,3.0,3.49,173.26999999999998
+f7d00f98-d143-46e7-ac9f-4e56089dab8c,Acer Accessorie Adapter,Electronics,Acer,37.55,3.0,148.0,67.0,2.0,2.99,73.25
+e0eedfb6-a73e-4576-a467-254f95fa2e5e,Le Creuset Classic Appliance,Home & Kitchen,Le Creuset,117.52,1.0,153.0,50.0,1.0,2.0,121.9
+964b36d0-bc20-40bc-8e1b-930dca2a6b31,KitchenAid Smart Appliance,Home & Kitchen,KitchenAid,25.43,4.0,121.0,48.0,2.0,4.17,75.12
+4443c97f-0e31-4d06-8bce-d0987a75218e,Spalding Max6 Cycling,Sports & Outdoors,Spalding,39.21,3.5,85.0,43.0,2.0,4.65,196.79
+eccc757e-5fbb-4601-84c8-d947bf6b76da,Apple Accessorie Cable,Electronics,Apple,52.23,4.0,103.0,41.0,1.0,2.44,54.64
+cf301c21-300a-451e-ae20-31f93b065422,Apple Accessorie Charger,Electronics,Apple,225.99,2.0,100.0,35.0,1.0,2.86,222.11
+bdd95c9d-a410-4b6d-84cc-1bc90cae699c,Cuisinart Denim Kitchenware,Home & Kitchen,Cuisinart,39.52,,69.0,35.0,1.0,2.86,41.28
+9fc09c6f-3d90-4b33-a950-cc9b977df8ed,Castrol Universal Car Accessorie,Automotive,Castrol,55.11,,58.0,32.0,0.0,0.0,0.0
+add54b88-7fbc-4bd9-99e1-42fc308f3f72,Adidas Classic Fit Menswear,Clothing & Accessories,Adidas,30.96,5.0,81.0,32.0,1.0,3.12,32.37
+2c625841-a848-47a7-bae9-4be42c6f6846,Goodyear Fluid SAE 5W-30,Automotive,Goodyear,205.45,5.0,106.0,27.0,1.0,3.7,391.78
+9f37c7b4-34bb-46db-ab34-4b6ad2884c5f,Head Max1 Fitness Equipment,Sports & Outdoors,Head,72.87,,39.0,26.0,0.0,0.0,0.0
+6a0a57f4-080a-43ec-9a43-e8503602e4d7,KitchenAid Decorative Home Decor,Home & Kitchen,KitchenAid,83.06,,64.0,26.0,1.0,3.85,84.92
+42f9572a-31c3-4d9f-9fb1-ae2e8598ef45,Bosch Car Accessorie - Beige,Automotive,Bosch,66.98,5.0,68.0,25.0,1.0,4.0,68.69
+83193959-a250-4c8f-a4ac-62280593a762,Timberland Adjustable Fitness Equipment,Sports & Outdoors,Timberland,88.66,5.0,92.0,25.0,1.0,4.0,90.65
+8b90ec3c-b810-484a-8a6e-3631149ecacb,Goodyear Car Accessorie - Navy,Automotive,Goodyear,53.23,4.0,85.0,25.0,1.0,4.0,54.34
+1e9375d3-32a3-4855-9af4-f0d384694c2b,Apple X12 Activity Band,Electronics,Apple,13.8,,62.0,24.0,1.0,4.17,14.11
+233ea18b-ca97-4371-ba51-51731e512c3a,Apple Prime Prime5,Electronics,Apple,175.72,,48.0,22.0,0.0,0.0,0.0
+6ef410a7-f23b-4267-8fd8-3d3e857760ec,Cuisinart Ultra-Soft Bedding,Home & Kitchen,Cuisinart,34.76,,38.0,21.0,1.0,4.76,33.84
+bd62a52c-fda1-4881-9d1a-6193ced2fca2,Fellowes Premium Stationery Set,Office Products,Fellowes,24.55,5.0,80.0,21.0,1.0,4.76,25.6
+e7234ca8-c931-4f65-8aaa-f628e9aabdae,Apple Air Over-Ear Headphones,Electronics,Apple,299.6,,38.0,20.0,0.0,0.0,0.0
+520cf0b3-8fe9-42ba-a245-f42e60a656d9,Wilson Edge13 Camping Gear,Sports & Outdoors,Wilson,29.52,,44.0,20.0,0.0,0.0,0.0
+107fe93b-2caa-4f40-8f85-aa22394e764b,Spalding Outdoor Recreation Set,Sports & Outdoors,Spalding,151.39,,42.0,20.0,1.0,5.0,151.48
+fd2f2ff0-2363-4f9d-a8db-227bf021d16a,Theragun Fitness Equipment Pro,Sports & Outdoors,Theragun,121.08,,56.0,20.0,1.0,5.0,122.42

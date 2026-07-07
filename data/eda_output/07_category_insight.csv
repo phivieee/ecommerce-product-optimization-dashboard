@@ -1,0 +1,11 @@
+category,total_products,total_views,total_clicks,total_purchase_rows,total_revenue,avg_price,avg_rating,ctr_percent,click_to_purchase_rate_percent,revenue_per_view
+Electronics,188,8511,3298,257,40316.42,211.12,4.28,38.75,7.79,4.74
+Sports & Outdoors,94,6059,2439,230,21000.52,67.37,4.13,40.25,9.43,3.47
+Home & Kitchen,142,7442,3013,237,17712.88,56.16,4.17,40.49,7.87,2.38
+Clothing & Accessories,159,7792,3107,288,15202.68,42.91,3.91,39.87,9.27,1.95
+Automotive,39,3896,1464,129,10656.95,47.23,3.98,37.58,8.81,2.74
+Books,132,4501,1787,143,6864.55,15.11,3.87,39.7,8.0,1.53
+Office Products,34,2893,1100,95,5638.3,25.71,3.93,38.02,8.64,1.95
+Beauty & Personal Care,78,3743,1518,151,5571.39,23.31,3.8,40.56,9.95,1.49
+Toys & Games,78,2313,938,98,4292.4,33.12,4.04,40.55,10.45,1.86
+Grocery & Gourmet,56,3313,1319,109,2254.76,8.81,4.12,39.81,8.26,0.68

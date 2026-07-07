@@ -1,0 +1,13 @@
+dataset,rows,columns,missing_values
+overall_kpi,1,16,0
+funnel,4,3,0
+product_perf,1000,34,2312
+category_perf,10,17,0
+brand_perf,139,14,43
+channel_perf,21,6,0
+device_perf,3,5,0
+referrer_perf,7,5,0
+user_segment,1943,12,257
+monthly_trend,41,13,0
+optimization,379,22,105
+review_perf,1000,17,777
