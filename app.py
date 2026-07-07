@@ -421,12 +421,13 @@ def combo_bar_line(df: pd.DataFrame, sort_col: str, rate_col: str, label_col: st
     return chart_layout(fig, height=455, legend=True)
 
 
-def pretty_table(df: pd.DataFrame, columns: list[str], rename: dict[str, str] | None = None, max_rows: int = 12) -> None:
+def pretty_table(df: pd.DataFrame, columns: list[str], rename: dict[str, str] | None = None, max_rows: int | None = 12) -> None:
     if df.empty:
         st.info("Data tidak tersedia untuk ditampilkan.")
         return
     rename = rename or {}
-    show = df[columns].head(max_rows).copy().rename(columns=rename)
+    show = df[columns].copy() if max_rows is None else df[columns].head(max_rows).copy()
+    show = show.rename(columns=rename)
     show.insert(0, "#", range(1, len(show) + 1))
 
     html = '<div class="custom-table-wrap"><table class="custom-table"><thead><tr>'
@@ -689,7 +690,7 @@ elif page == "3. Product Optimization Opportunity":
             high_view_low_ctr.sort_values("total_views", ascending=False),
             ["product_name", "category", "brand", "price", "rating_avg_clean", "total_views", "total_clicks", "ctr_percent", "total_revenue"],
             {"product_name": "Product Name", "rating_avg_clean": "Rating", "total_views": "Views", "total_clicks": "Clicks", "ctr_percent": "CTR", "total_revenue": "Revenue", "price": "Price"},
-            max_rows=10,
+            max_rows=None,
         )
 
     with tab2:
@@ -703,7 +704,7 @@ elif page == "3. Product Optimization Opportunity":
             high_click_low_purchase.sort_values("total_clicks", ascending=False),
             ["product_name", "category", "brand", "price", "rating_avg_clean", "total_clicks", "total_purchase_rows", "click_to_purchase_rate_percent", "total_revenue"],
             {"product_name": "Product Name", "rating_avg_clean": "Rating", "total_clicks": "Clicks", "total_purchase_rows": "Purchases", "click_to_purchase_rate_percent": "Purchase Rate", "total_revenue": "Revenue", "price": "Price"},
-            max_rows=10,
+            max_rows=None,
         )
 
 # ============================================================
