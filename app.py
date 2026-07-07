@@ -403,8 +403,22 @@ def combo_bar_line(df: pd.DataFrame, sort_col: str, rate_col: str, label_col: st
     )
     fig.update_yaxes(title_text=bar_name, secondary_y=False)
     fig.update_yaxes(title_text=line_name, secondary_y=True)
-    fig.update_layout(title=title, xaxis_title="Product", xaxis_tickangle=-32, margin=dict(b=95))
-    return chart_layout(fig, height=430, legend=True)
+    fig.update_layout(
+        title=title,
+        xaxis_title="Product",
+        xaxis_tickangle=-32,
+        margin=dict(b=120),
+        legend=dict(
+            orientation="h",
+            yanchor="top",
+            y=-0.28,
+            xanchor="left",
+            x=0,
+            font=dict(color="#334155", size=12),
+            bgcolor="rgba(255,255,255,0.55)",
+        ),
+    )
+    return chart_layout(fig, height=455, legend=True)
 
 
 def pretty_table(df: pd.DataFrame, columns: list[str], rename: dict[str, str] | None = None, max_rows: int = 12) -> None:
