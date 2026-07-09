@@ -9,9 +9,6 @@ import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 import streamlit as st
 
-# ============================================================
-# CONFIG
-# ============================================================
 
 st.set_page_config(
     page_title="E-Commerce Product Optimization",
@@ -25,9 +22,6 @@ DATA_DIR = BASE_DIR / "data" / "eda_output"
 
 CHART_CONFIG = {"displayModeBar": False, "responsive": True}
 
-# ============================================================
-# CSS
-# ============================================================
 
 st.markdown(
     """
@@ -207,10 +201,6 @@ st.markdown(
     """,
     unsafe_allow_html=True,
 )
-
-# ============================================================
-# HELPERS
-# ============================================================
 
 @st.cache_data(show_spinner=False)
 def load_csv(file_name: str) -> pd.DataFrame:
@@ -458,10 +448,6 @@ def pretty_table(df: pd.DataFrame, columns: list[str], rename: dict[str, str] | 
     html += "</tbody></table></div>"
     st.markdown(html, unsafe_allow_html=True)
 
-# ============================================================
-# LOAD DATA
-# ============================================================
-
 summary = load_csv("02_python_summary.csv")
 funnel = load_csv("17_funnel_summary.csv")
 monthly = load_csv("14_monthly_trend.csv")
@@ -520,11 +506,7 @@ if high_click_low_purchase.empty:
         & (product_full["click_to_purchase_rate_percent"] < product_full["click_to_purchase_rate_percent"].median())
     ].sort_values(["total_clicks", "click_to_purchase_rate_percent"], ascending=[False, True])
 
-# ============================================================
-# SIDEBAR
-# ============================================================
-
-st.sidebar.markdown("### 📦 Dashboard")
+st.sidebar.markdown("###  Dashboard")
 st.sidebar.markdown("**E-Commerce Product Engagement & Conversion Optimization**")
 page = st.sidebar.radio(
     "Pilih Halaman",
@@ -536,19 +518,11 @@ page = st.sidebar.radio(
     ],
 )
 
-# ============================================================
-# HEADER
-# ============================================================
-
 st.markdown('<div class="dashboard-title">E-Commerce Product Engagement & Conversion Optimization</div>', unsafe_allow_html=True)
 st.markdown(
     '<div class="dashboard-subtitle">Analisis funnel, performa produk, peluang optimasi, kategori, dan brand berdasarkan data e-commerce.</div>',
     unsafe_allow_html=True,
 )
-
-# ============================================================
-# PAGE 1
-# ============================================================
 
 if page == "1. Executive Overview":
     s = summary.iloc[0] if not summary.empty else pd.Series(dtype="float64")
@@ -616,10 +590,6 @@ if page == "1. Executive Overview":
         f"Kategori dengan CTR tertinggi adalah <b>{top_ctr_cat['category']}</b> dengan CTR <b>{top_ctr_cat['ctr_percent']:.2f}%</b>. Fokus optimasi utama adalah produk dengan exposure tinggi tetapi CTR/purchase rate rendah.",
     )
 
-# ============================================================
-# PAGE 2
-# ============================================================
-
 elif page == "2. Product Performance":
     c1, c2, c3, c4 = st.columns(4)
     with c1:
@@ -666,10 +636,6 @@ elif page == "2. Product Performance":
     show_chart(combo_bar_line(product_full, "total_clicks", "click_to_purchase_rate_percent", "product_name", "Top Products by Clicks with Purchase Rate Overlay", "Clicks", "Purchase Rate (%)", "#CDEFD2", "#2E8B57"))
     st.markdown('</div>', unsafe_allow_html=True)
 
-# ============================================================
-# PAGE 3
-# ============================================================
-
 elif page == "3. Product Optimization Opportunity":
     c1, c2 = st.columns(2)
     with c1:
@@ -706,10 +672,6 @@ elif page == "3. Product Optimization Opportunity":
             {"product_name": "Product Name", "rating_avg_clean": "Rating", "total_clicks": "Clicks", "total_purchase_rows": "Purchases", "click_to_purchase_rate_percent": "Purchase Rate", "total_revenue": "Revenue", "price": "Price"},
             max_rows=None,
         )
-
-# ============================================================
-# PAGE 4
-# ============================================================
 
 elif page == "4. Category & Brand Performance":
     c1, c2, c3 = st.columns(3)
